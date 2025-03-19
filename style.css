@@ -1,0 +1,130 @@
+body {
+    background-color: #dee7f6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 10px 10px 170px;
+    margin: 0;
+}
+
+.header-title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main {
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.new-task-container {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 10px 30px 30px 30px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.task-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+.task-board {
+    display: flex;
+    gap: 20px;
+}
+
+.task-column {
+    flex: 10;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    margin: 10px 20px 10px;
+}
+
+.backlog .title {
+    background-color: #b4b2ae;
+    color: #404040;
+}
+
+.backlog .task {
+    border-left: 5px solid #696762;
+}
+
+.in-progress .title {
+    background-color: #9cbde0;
+    color: #007bff;
+}
+
+.in-progress .task {
+    border-left: 5px solid #007bff;
+}
+
+.done .title {
+    background-color: #b0deba;
+    color: #28a745;
+}
+
+.done .task {
+    border-left: 5px solid #28a745;
+}
+
+.trash .title {
+    background-color: #eddadb;
+    color: #e74a5a;
+}
+
+.trash .task {
+    border-left: 5px solid #dc3545;
+}
+
+.clear-button {
+    margin-top: auto;
+    padding: 10px;
+    background-color: #bb2f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clear-button:hover {
+    background-color: #b92323;
+}

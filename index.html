@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title"> Список задач</h1>
+    </header>
+    <main class="main">
+        <section class="new-task-container">
+            <h2>Новая задача</h2>
+            <input class="task-input" placeholder="Название задачи...">
+            <button class="add-button">+ Добавить</button>
+        </section>
+
+        <section class="task-board">
+            <div class="task-column backlog">
+                <span class="title">Бэклог</span>
+                <div class="task">Выучить JS</div>
+                <div class="task">Выучить React</div>
+                <div class="task">Сделать домашку</div>
+            </div>
+            <div class="task-column in-progress">
+                <span class="title">В процессе</span>
+                <div class="task">Выпить чаю</div>
+                <div class="task">Попить воды</div>
+            </div>
+            <div class="task-column done">
+                <span class="title">Готово</span>
+                <div class="task">Позвонить маме</div>
+                <div class="task">Погладить кота</div>
+            </div>
+            <div class="task-column trash">
+                <span class="title">Корзина</span>
+                <div class="task">Сходить погулять</div>
+                <div class="task">Прочитать Войну и Мир</div>
+                <button class="clear-button">Х Очистить</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
