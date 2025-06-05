@@ -1,133 +1,170 @@
 body {
-    background-color: #dee7f6;
-    font-family: Arial, sans-serif;
-    margin: 0;
+   background-color: #dee7f6;
+   font-family: 'Franklin Gothic Medium';
+   margin: 0;
 }
 
 .header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 10px 10px 170px;
-    margin: 0;
+   background-color: #2087f6;
+   color: white;
+   padding: 10px 10px 10px 150px;
+   margin: 0;
 }
 
 .header-title {
-    font-size: 36px;
-    font-weight: bold;
+   font-size: 36px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .main {
-    padding: 40px;
-    width: 80%;
-    margin: 0 auto;
+   padding: 40px;
+   width: 80%;
+   margin: 0 auto;
 }
 
 .new-task-container {
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 10px 30px 30px 30px;
-    border-radius: 10px;
-    display: inline-block;
+   background-color: white;
+   margin-bottom: 10px;
+   padding: 1px 30px 30px 30px;
+   border-radius: 10px;
+   display: inline-block;
+   font-size: 20px;
 }
 
 .task-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+   flex: 1;
+   padding: 9px 50px 9px 15px;
+   border: 1px solid #007bff;
+   border-radius: 5px;
+   font-size: medium;
 }
 
 .add-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+   padding: 10px 30px;
+   background-color: #2087f6;
+   font-family: 'Franklin Gothic Medium';
+   font-size: large;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s;
 }
 
 .add-button:hover {
-    background-color: #0056b3;
+   background-color: #005bbc;
 }
 
 .task-board {
-    display: flex;
-    gap: 20px;
+   display: flex;
+   gap: 1px;
 }
 
 .task-column {
-    flex: 10;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+   flex: 10;
+   padding: 5px;
+   display: flex;
+   flex-direction: column;
 }
 
 .task {
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin: 5px;
-    
+   padding: 15px 20px 15px 20px;
+   background-color: white;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+   margin: 5px;
+   font-size: 20px;
 }
 
 .title {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 15px 10px 15px;
-    border-radius: 10px;
-    margin: 10px 20px 10px;
-    max-width: 130px;
+   font-size: 25px;
+   font-weight: bold;
+   padding: 10px 20px 10px 15px;
+   border-radius: 10px;
+   margin: 10px;
+   max-width: 130px;
 }
 
 .backlog .title {
-    background-color: #b4b2ae;
-    color: #404040;
+   background-color: #cdcbc6;
+   color: #535151;
 }
 
 .backlog .task {
-    border-left: 5px solid #696762;
+   border-left: 5px solid #696762;
 }
 
 .in-progress .title {
-    background-color: #9cbde0;
-    color: #007bff;
+   background-color: #bbd0e6;
+   color: #0c7aef;
 }
 
 .in-progress .task {
-    border-left: 5px solid #007bff;
+   border-left: 5px solid #007bff;
 }
 
 .done .title {
-    background-color: #b0deba;
-    color: #28a745;
+   background-color: #bce5c5;
+   color: #1dbe42;
 }
 
 .done .task {
-    border-left: 5px solid #28a745;
+   border-left: 5px solid #28a745;
 }
 
 .trash .title {
-    background-color: #eddadb;
-    color: #e74a5a;
+   background-color: #eddadb;
+   color: #e74a5a;
 }
 
 .trash .task {
-    border-left: 5px solid #dc3545;
+   border-left: 5px solid #d61e30cb;
 }
 
 .clear-button {
-    margin: 30px 0px 0px 0px;
-    padding: 10px;
-    background-color: #bb2f2f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+   margin: 10px 20px 10px 20px;
+   padding: 15px 5px 15px 5px;
+   background-color: #d61e30cb;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+   font-family: 'Franklin Gothic Medium';
+   font-size: 20px;
 }
 
 .clear-button:hover {
-    background-color: #b92323;
+   background-color: #9f1a1ad6;
+}
+
+.board-app {
+   margin: 0;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.board-app__main {
+   flex: 1;
+   padding: 40px;
+}
+
+.board-app__inner {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.add-task {
+   margin-bottom: 20px;
+}
+
+.add-task__form {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.add-task__input-wrapper {
+   flex: 1;
 }
