@@ -4,8 +4,8 @@ function createFormAddTaskComponentTemplate() {
    return `
     <section class="new-task-container">
       <h2>Новая задача</h2>
-      <form class="add-task__form" aria-label="Форма добавления задачи">
-        <div class="add-task__input-wrapper">
+      <form class="add-task_form" aria-label="Форма добавления задачи">
+        <div class="add-task_input-wrapper">
           <input class="task-input" type="text" placeholder="Название задачи..." required>
         </div>
         <button class="add-button" type="submit">+ Добавить</button>

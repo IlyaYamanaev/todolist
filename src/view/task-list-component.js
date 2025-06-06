@@ -1,5 +1,5 @@
+
 import { createElement } from '../framework/render.js';
-import { render } from '../framework/render.js';
 import TaskComponent from './task-component.js';
 
 function createTaskListComponentTemplate() {
@@ -27,18 +27,10 @@ export default class TaskListComponent {
          titleElement.textContent = this.title;
          this.element.appendChild(titleElement);
 
-         const tasksContainer = document.createElement('div');
          this.tasks.forEach(task => {
-            render(new TaskComponent(task), tasksContainer);
+            const taskComponent = new TaskComponent(task);
+            this.element.appendChild(taskComponent.getElement());
          });
-         this.element.appendChild(tasksContainer);
-
-         if (this.className === 'trash') {
-            const clearButton = document.createElement('button');
-            clearButton.classList.add('clear-button');
-            clearButton.textContent = 'Х Очистить';
-            this.element.appendChild(clearButton);
-         }
       }
       return this.element;
    }
