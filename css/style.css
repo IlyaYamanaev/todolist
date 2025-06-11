@@ -82,8 +82,8 @@ body {
    border-radius: 10px;
    margin: 10px;
 
-   max-width: 170px;
-   min-width: 130px;
+   max-width: 200px;
+   min-width: 160px;
 }
 
 .task {
@@ -100,6 +100,15 @@ body {
 .task:hover {
    transform: translateX(5px);
 }
+
+.no-tasks {
+   padding: 20px;
+   text-align: center;
+   color: #6c757d;
+   font-size: 18px;
+   background-color: #f8f9fa;
+   border-radius: 5px;
+   margin: 10px;}
 
 .backlog .title {
    background-color: #cdcbc6;
