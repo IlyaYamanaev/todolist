@@ -23,14 +23,14 @@ export default class TaskBoardPresenter {
    }
 
    createTask() {
-      const taskTitle = document.querySelector('.add-new').value.trim();
+      const taskTitle = document.querySelector('.task-input').value.trim();
       if (!taskTitle) {
          return;
       }
 
       this.#tasksModel.addTask(taskTitle);
 
-      document.querySelector('.add-new').value = '';
+      document.querySelector('.task-input').value = '';
    }
 
    init() {
