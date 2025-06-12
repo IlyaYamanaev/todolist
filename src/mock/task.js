@@ -1,48 +1,20 @@
+import { Status } from "../const.js";
 
 export const tasks = [
    {
-      id: "1",
-      title: "Сходить в магаз",
-      status: "backlog",
+      status: Status.BACKLOG,
+      tasks: ["Сходить в магазин", "Пойти погулять", "Устроиться на работу"]
    },
    {
-      id: "2",
-      title: "Пойти погулять",
-      status: "backlog",
+      status: Status.IN_PROGRESS,
+      tasks: []
    },
    {
-      id: "3",
-      title: "Устроиться на работу",
-      status: "backlog",
-   }, 
-   {
-      id: "4",
-      title: "Выучить JS",
-      status: "in-progress",
+      status: Status.DONE,
+      tasks: ["Выучить JS", "Выучить React"]
    },
    {
-      id: "5",
-      title: "Выучить React",
-      status: "in-progress",
-   },
-   {
-      id: "6",
-      title: "Сделать домашку",
-      status: "done",
-   },
-   {
-      id: "7",
-      title: "Позвонить маме",
-      status: "done",
-   },
-   {
-      id: "8",
-      title: "Погладить кота",
-      status: "trash",
-   },
-   {
-      id: "9",
-      title: "Прочитать Войну и Мир",
-      status: "trash",
+      status: Status.TRASH,
+      tasks: ["Позвонить маме", "Погладить кота", "Прочитать Войну и Мир"]
    }
-];
+]

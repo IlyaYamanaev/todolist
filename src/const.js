@@ -1,13 +1,14 @@
-export const TaskStatus = {
-   BACKLOG: 'backlog',
-   IN_PROGRESS: 'in-progress',
-   DONE: 'done',
-   TRASH: 'trash'
+export const Status = {
+   BACKLOG: `backlog`,
+   IN_PROGRESS: `in-progress`,
+   DONE: `done`,
+   TRASH: `trash`
 };
 
-export const TaskStatusTitle = {
-   [TaskStatus.BACKLOG]: 'Бэклог',
-   [TaskStatus.IN_PROGRESS]: 'В процессе',
-   [TaskStatus.DONE]: 'Готово',
-   [TaskStatus.TRASH]: 'Корзина'
+export const StatusLabel = {
+   [Status.BACKLOG]: `Бэклог`,
+   [Status.IN_PROGRESS]: `В процессе`,
+   [Status.DONE]: `Готово`,
+   [Status.TRASH]: `Корзина`
 };
+
