@@ -1,6 +1,6 @@
-import AbstractComponent from "../framework/view/abstract-component.js";
+import AbstractComponent from '../framework/view/abstract-component.js';
 
-function createFormAddTaskComponentTemplate() {
+function createAddNewTaskTemplate() {
    return `
    <section class="new-task-container">
       <h1 class="new-task-header">Новая задача</h1>
@@ -8,14 +8,28 @@ function createFormAddTaskComponentTemplate() {
          <div>
             <input class="task-input" type="text" placeholder="Название задачи..." required>
          </div>
-        <button class="add-button" type="submit">+ Добавить</button>
+        <button class="add-button" type='submit'>+ Добавить</button>
       </form>
    </section> 
    `;
 }
 
+
 export default class FormAddTaskComponent extends AbstractComponent {
-   get template() {
-      return createFormAddTaskComponentTemplate();
+   #handleClick = null;
+
+   constructor({ onClick }) {
+      super();
+      this.#handleClick = onClick;
+      this.element.addEventListener('submit', this.#clickHandler);
    }
+
+   get template() {
+      return createAddNewTaskTemplate();
+   }
+
+   #clickHandler = (evt) => {
+      evt.preventDefault();
+      this.#handleClick();
+   };
 }

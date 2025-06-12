@@ -1,9 +1,9 @@
-import AbstractComponent from '../framework/view/abstract-component.js';
+import AbstractComponent from "../framework/view/abstract-component.js";
 
-function createTaskComponentTemplate(task) {
+function createTaskTemplate(task) {
    return (`
-    <div class="task">${task}</div>
-  `);
+      <div class="task">${task}</div>
+    `);
 }
 
 export default class TaskComponent extends AbstractComponent {
@@ -12,9 +12,7 @@ export default class TaskComponent extends AbstractComponent {
       this.tasks = tasks;
    }
 
-
    get template() {
-      return createTaskComponentTemplate(this.tasks);
+      return createTaskTemplate(this.tasks);
    }
 }
-

@@ -1,23 +1,41 @@
 import HeaderComponent from './view/header-component.js';
 import FormAddTaskComponent from './view/form-add-task-component.js';
-import TasksBoardPresenter from './presenter/tasks-board-presenter.js';
-import TaskModel from './model/task-model.js';
+import TaskBoadPresenter from './presenter/task-board-presenter.js';
+import TasksModel from './model/task-model.js';
 import { render, RenderPosition } from './framework/render.js';
+import ClearButtonComponent from './view/clear-button-component.js';
 
 const bodyContainer = document.querySelector('.board-app');
 
-const addTaskContainer = bodyContainer;
-const taskboardContainer = bodyContainer;
 
-const tasksModel = new TaskModel();
-const tasksBoardPresenter = new TasksBoardPresenter({
-   boardContainer: taskboardContainer,
-   tasksModel
+const tasksModel = new TasksModel();
+
+const clearButtonComponent = new ClearButtonComponent({
+   onClick: handleClearBasketButtonClick
 });
+
+const taskBoardPresenter = new TaskBoadPresenter({
+   boardContainer: bodyContainer,
+   tasksModel: tasksModel,
+   clearButtonComponent: clearButtonComponent
+});
+
+const formAddTaskComponent = new FormAddTaskComponent({
+   onClick: handleAddNewTaskButtonClick
+});
+
 
 render(new HeaderComponent(), bodyContainer, RenderPosition.BEFOREBEGIN);
 
-render(new FormAddTaskComponent(), addTaskContainer);
+render(formAddTaskComponent, bodyContainer);
 
-tasksBoardPresenter.init();
+taskBoardPresenter.init();
+
+function handleAddNewTaskButtonClick() {
+   taskBoardPresenter.createTask();
+}
+
+function handleClearBasketButtonClick() {
+   taskBoardPresenter.clearBasket();
+}
 
