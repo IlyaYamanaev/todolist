@@ -48,7 +48,7 @@ export const tasks = [
          },
          {
             id: generateID(),
-            name: "Позвонить маме"
+            name: "Погладить кота"
          },
          {
             id: generateID(),

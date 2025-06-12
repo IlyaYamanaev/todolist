@@ -3,7 +3,7 @@ import TaskComponent from '../view/task-component.js';
 import { render } from '../framework/render.js';
 import TaskboardComponent from "../view/taskboard-component.js";
 import NoTaskComponent from "../view/no-task-component.js";
-import ClearButtonComponent from "../view/clear-button-component.js";
+import { Status } from "../const.js";
 
 
 export default class TaskBoardPresenter {
@@ -23,17 +23,15 @@ export default class TaskBoardPresenter {
    }
 
    createTask() {
-      const taskTitle = document.querySelector('.task-input').value.trim();
+      const taskTitle = document.querySelector('.add-new').value.trim();
       if (!taskTitle) {
          return;
       }
 
       this.#tasksModel.addTask(taskTitle);
 
-      document.querySelector('.task-input').value = '';
+      document.querySelector('.add-new').value = '';
    }
-
-
 
    init() {
       this.#renderBoard();
@@ -59,30 +57,38 @@ export default class TaskBoardPresenter {
    }
 
    #renderTaskList(status, tasks) {
-      const list = new TasksListComponent(status);
+      const list = new TasksListComponent(status, this.#handleTaskDrop.bind(this));
 
       render(list, this.#taskTaskboardComponent.element);
 
       tasks.length === 0 ? this.#renderNoTaskComponent(list) : tasks.forEach((task) => {
-         this.#renderTask(task.name, list);
+         this.#renderTask(task, list);
       });
    }
 
    #renderTask(task, container) {
-      render(new TaskComponent(task), container.element.querySelector('.tasks-list'));
+      render(new TaskComponent(task), container.element.querySelector('ul'));
    }
 
    #renderClearButton() {
       const basketContainer = document.querySelector('.basket');
 
-      if (basketContainer) {
-         render(
-            new ClearButtonComponent({ onClick: this.clearBasket.bind(this) }),
-            basketContainer
-         );
+      if (!basketContainer) return;
+
+      render(this.#clearButtonComponent, basketContainer);
+
+      const basketTasks = this.#tasksModel.getTasksByStatus(Status.BASKET)?.tasks || [];
+
+      if (basketTasks.length === 0) {
+         this.#clearButtonComponent.disable();
+      } else {
+         this.#clearButtonComponent.enable();
       }
    }
 
+   #handleTaskDrop(newStatus, taskId, droppedTask) {
+      this.#tasksModel.updateTaskStatus(newStatus, taskId, droppedTask);
+   }
 
    #renderNoTaskComponent(container) {
       render(new NoTaskComponent(), container.element);
@@ -96,5 +102,7 @@ export default class TaskBoardPresenter {
    #handleModelChange() {
       this.#clearBoard();
       this.#renderBoard();
+      this.#renderClearButton();
    }
+
 }

@@ -1,11 +1,11 @@
 import AbstractComponent from "../framework/view/abstract-component.js";
 
 function createClearButtonTemplate() {
-   return `
-   <button class="clear-button" type='submit'>
-     Х Очистить
-   </button>
- `;
+   return (
+      `
+         <button class="clear-button" type='submit'>Очистить</button>
+         `
+   )
 }
 
 export default class ClearButtonComponent extends AbstractComponent {
@@ -23,6 +23,17 @@ export default class ClearButtonComponent extends AbstractComponent {
 
    #clearHandler = (evt) => {
       evt.preventDefault();
-      this.#handleClick();
+      if (!this.element.disabled) {
+         this.#handleClick();
+      }
+   };
+
+   disable() {
+      this.element.disabled = true;
+   }
+
+   enable() {
+      this.element.disabled = false;
    }
 }
+

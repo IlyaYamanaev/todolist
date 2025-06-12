@@ -11,3 +11,12 @@ export const StatusLabel = {
    [Status.DONE]: `Готово`,
    [Status.BASKET]: `Корзина`
 };
+
+
+export const OrderPosition = {
+   START: `start`,
+   END: `end`,
+   BELOW: `below`,
+   ABOVE: `above`
+}
+

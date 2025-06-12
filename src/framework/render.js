@@ -20,8 +20,8 @@ function render(component, container, place = RenderPosition.BEFOREEND) {
       throw new Error('Can render only components');
    }
 
-   if (component === null) {
-      throw new Error('Container element doen\'t exist');
+   if (!container) {
+      throw new Error('Container element doesn\'t exist');
    }
 
    container.insertAdjacentElement(place, component.element);
