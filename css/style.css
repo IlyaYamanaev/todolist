@@ -139,12 +139,12 @@ body {
    border-left: 5px solid #28a745;
 }
 
-.trash .title {
+.basket .title {
    background-color: #eddadb;
    color: #e74a5a;
 }
 
-.trash .task {
+.basket .task {
    border-left: 5px solid #d61e30cb;
 }
 
