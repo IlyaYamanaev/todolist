@@ -2,15 +2,16 @@ import { OrderPosition, StatusLabel } from "../const.js";
 import AbstractComponent from "../framework/view/abstract-component.js";
 
 function createTasksListTemplate(label, status) {
-   return `
-    <div class="task-column ${status}">
-      <h3 class="title">${label}</h3>
-      <ul class="tasks-list"></ul>
-    </div>
-  `;
+   return (`
+   <div class="task-column ${status}">
+     <h3 class="title">${label}</h3>
+     <ul class="tasks-list"></ul>
+   </div>
+ `);
 }
 
 export default class TasksListComponent extends AbstractComponent {
+
    constructor(status, onTaskDrop) {
       super();
       this.status = status;
@@ -40,13 +41,13 @@ export default class TasksListComponent extends AbstractComponent {
          const [x, y] = [dropTargetElement.clientX, dropTargetElement.clientY];
          const localName = dropTargetElement.target.localName;
 
-         if (localName === 'div') {
-            droppedTarget.order = document.elementFromPoint(x, y - 15).localName === 'task' ? OrderPosition.END : OrderPosition.START;
-         } else if (localName === 'tasks-list') {
+         if (localName === 'div' || localName === 'h3') {
+            droppedTarget.order = document.elementFromPoint(x, y - 15).localName === 'li' ? OrderPosition.END : OrderPosition.START;
+         } else if (localName === 'ul') {
             const aboveElement = document.elementFromPoint(x, y - 15).id;
             droppedTarget.taskId = aboveElement;
             droppedTarget.order = OrderPosition.ABOVE;
-         } else if (localName === 'task') {
+         } else if (localName === 'li') {
             droppedTarget.taskId = dropTargetElement.target.id;
             const targetHeight = dropTargetElement.target.clientHeight;
             const targetOffsetTop = dropTargetElement.target.offsetTop;

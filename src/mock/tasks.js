@@ -4,29 +4,10 @@ import { Status } from "../const.js";
 export const tasks = [
    {
       status: Status.BACKLOG,
-      tasks: [
-         {
-            id: generateID(),
-            name: "Сходить в магазин"
-         },
-         {
-            id: generateID(),
-            name: "Пойти погулять"
-         },
-         {
-            id: generateID(),
-            name: "Устроиться на работу"
-         }
-      ]
-
+      tasks: []
    },
    {
       status: Status.IN_PROGRESS,
-      tasks: []
-
-   },
-   {
-      status: Status.DONE,
       tasks: [
          {
             id: generateID(),
@@ -35,24 +16,44 @@ export const tasks = [
          {
             id: generateID(),
             name: "Выучить React"
+         },
+         {
+            id: generateID(),
+            name: "Создать приложение на Vue.js"
          }
       ]
-
+   },
+   {
+      status: Status.DONE,
+      tasks: [
+         {
+            id: generateID(),
+            name: "Разработать сервер на .NET (C#)"
+         },
+         {
+            id: generateID(),
+            name: "Настроить маршрутизацию в React"
+         }
+      ]
    },
    {
       status: Status.BASKET,
       tasks: [
          {
             id: generateID(),
-            name: "Позвонить маме"
+            name: "Оптимизировать код на Vue.js"
          },
          {
             id: generateID(),
-            name: "Погладить кота"
+            name: "Удалить ненужные файлы"
          },
          {
             id: generateID(),
-            name: "Прочитать Войну и Мир"
+            name: "Очистить базу данных"
+         },
+         {
+            id: generateID(),
+            name: "Изучить архитектуру .NET Core"
          }
       ]
    }
