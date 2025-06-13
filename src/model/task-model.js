@@ -126,7 +126,7 @@ export default class TasksModel extends Observable {
          this._notify(UserAction.ADD_TASK, createdTask);
          return createdTask;
       } catch (err) {
-         console.error('Ошибка при добавлении задачи на сервер:');
+         //console.error('Ошибка при добавлении задачи на сервер:');
          throw err;
       }
    }
@@ -151,7 +151,7 @@ export default class TasksModel extends Observable {
 
          this._notify(UserAction.DELETE_TASK, basketTasks);
       } catch (err) {
-         console.log('Ошибка при удалении задач из корзины на сервере: ', err);
+         //console.log('Ошибка при удалении задач из корзины на сервере: ', err);
          throw err;
       }
    }
