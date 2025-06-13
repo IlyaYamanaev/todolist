@@ -34,7 +34,7 @@ export default class TaskBoardPresenter {
          await this.#tasksModel.addTask(taskTitle);
          document.querySelector('.task-input').value = '';
       } catch (err) {
-         console.error('Ошибка при создании задачи: ', err);
+         //console.error('Ошибка при создании задачи: ', err);
          throw err;
       }
    }
@@ -67,7 +67,7 @@ export default class TaskBoardPresenter {
       try {
          await this.#tasksModel.removeBasketTask();
       } catch (err) {
-         console.error('Ошибка при очистке корзины: ', err);
+         //console.error('Ошибка при очистке корзины: ', err);
       }
    }
 
@@ -108,7 +108,7 @@ export default class TaskBoardPresenter {
       try {
          await this.#tasksModel.updateTaskStatus(newStatus, taskId, droppedTask);
       } catch (err) {
-         console.error('Ошибка при обновлении статуса задачи: ', err);
+         //console.error('Ошибка при обновлении статуса задачи: ', err);
       }
    }
 
