@@ -185,7 +185,7 @@ export default class TasksModel extends Observable {
             this.#updateOrderInStatus(oldStatus, newStatus, oldOrderInStatus, task.orderInStatus, task, taskByStatus.tasks);
             this._notify(UserAction.UPDATE_TASK, task);
          } catch (err) {
-            console.error('Ошибка при обновлении статуса задачи: ', err);
+            //console.error('Ошибка при обновлении статуса задачи: ', err);
             delete task['status'];
             throw err;
          }
